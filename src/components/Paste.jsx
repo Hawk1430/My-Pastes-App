@@ -82,16 +82,16 @@ const Paste = () => {
       <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2">
         <ClipboardList size={28} className="text-blue-500" /> All Pastes
       </h1>
-      <div className="flex flex-row place-content-between">
+      <div className="flex flex-col md:flex-row md:justify-between gap-4">
         <input
-          className="p-2 border-2 rounded-2xl min-w-[550px] mt-5 bg-white dark:bg-gray-700 dark:text-gray-100 border-gray-300 dark:border-gray-600"
+          className="p-2 border-2 rounded-2xl w-full md:min-w-[550px] bg-white dark:bg-gray-700 dark:text-gray-100 border-gray-300 dark:border-gray-600"
           type="search"
           value={searchTerm}
           placeholder="Search here"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 mt-4"
+          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400"
           onClick={handleReset}
         >
           Reset All Pastes
@@ -105,8 +105,8 @@ const Paste = () => {
               key={paste._id}
               className="border-2 p-4 rounded-lg shadow-md my-3 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
             >
-              <div className="flex flex-row place-content-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col md:flex-row md:justify-between gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
                   <FileText size={24} className="text-blue-500" />
                   <div>
                     <div className="text-lg font-bold dark:text-gray-200">
@@ -118,7 +118,7 @@ const Paste = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex flex-row gap-4 place-content-evenly mt-4">
+                  <div className="flex flex-wrap gap-2 justify-start md:justify-evenly">
                     <NavLink
                       to={`/?pasteId=${paste?._id}`}
                       className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
