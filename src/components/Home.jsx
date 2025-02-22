@@ -29,8 +29,8 @@ const Home = () => {
   }, [pasteId, allPastes]);
 
   function createPaste() {
-    if (!title.trim() && !value.trim()) {
-      toast.error("⚠️ Please enter a title or content before saving.");
+    if (!value.trim()) {
+      toast.error("⚠️ Please enter content before saving.");
       return;
     }
 
