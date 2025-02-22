@@ -30,7 +30,7 @@ const Home = () => {
 
   function createPaste() {
     if (!value.trim()) {
-      toast.error("⚠️ Please enter content before saving.");
+      toast.error("Please enter content before saving.");
       return;
     }
 
